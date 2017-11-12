@@ -34,6 +34,7 @@ void setup() {
   pinMode(tempPin, INPUT);
   pinMode(soundPin, INPUT);
   lcd.begin(16, 2);
+  Serial.begin(9600);
 
 
 }
@@ -213,23 +214,3 @@ void clearLcd()
   lcd.setCursor(0, 0);
   lcd.print("                ");
 }
-
-
-//int readTxt()
-//{
-// FILE *ptr_file;
-// int x;
-
-//ptr_file =fopen("output.txt", "w");
-
-//if (!ptr_file)
-//      return 1;
-
-//for (x=1; x<=10; x++)
-//      fprintf(ptr_file,"%d\n", x);
-
-//    fclose(ptr_file);
-
-//  return  0;
-//}
-
