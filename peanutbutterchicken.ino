@@ -170,11 +170,12 @@ void loop() {
   {
     digitalWrite(led2Pin, HIGH);
     clearLcd();
-    lcd.setCursor(0,0);
+    lcd.setCursor(0, 0);
     lcd.print("Relax~");
-    lcd.setRGB(255,255,255);
-    delay(1000);
+    lcd.setRGB(255, 255, 255);
+    delay(500);
     lcd.setRGB(favR, favG, favB);
+    delay(500);
   }
 
   //VIBRATION SENSOR
