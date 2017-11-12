@@ -1,0 +1,57 @@
+// peanutbutterchicken
+//AKA Hans
+
+// intro
+Greetings, my 
+name is Hans.
+
+(^___^)
+
+Press the button
+to continue.
+
+I am your stress
+assistant.
+
+I will give you
+activities
+
+that relieve
+stress.
+
+When you see the
+screen flash,
+
+please press the
+button to begin.
+
+Let's try it.
+
+// color chart
+
+red = stress
+green = 
+
+// LEDs & push buttons
+blue LED is yes
+red LED is no
+
+
+// rotary angle sensor
+Allows user to select favorite color.
+Will be used later for soothing.
+
+
+// touch & accelerometer
+When the touch sensor is touched, the accelerometer is shaken back and forth.
+
+// light sensor
+
+// sound sensor
+Actively listening to the user in order to help while user makes aggressive sounds.
+
+// buzzer
+
+
+// Piezo vibration sensor
+Checks if the user shows sign of distress (ie. hitting a table, agressive typing).
