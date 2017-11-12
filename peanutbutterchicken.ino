@@ -6,48 +6,60 @@ rgb_lcd lcd;
 
 int buttonPin = 2;
 int ledPin = 3;
-int colorR = 0;
-int colorG = 0;
-int colorB = 0;
+int colorR = 255;
+int colorG = 255;
+int colorB = 255;
 
 void setup() {
 
   pinMode(buttonPin, INPUT); // set mode for the pin (INPUT/OUTPUT)
   lcd.begin(16, 2);
-  lcd.print("hello, world!"); // print to LCD
+  lcd.print(""); // print to LCD
   
 }
 
 void loop() {
-  
-  lcd.setRGB(colorR, colorG, colorB);
-  // set the cursor to column 0, line 1
-  // (note: line 1 is the second row, since counting begins with 0):
-  
-  lcd.setCursor(0, 1); // print the number of seconds since reset
-  if (digitalRead(buttonPin))
-  {
-    colorR++; // increase Red intensity
-    digitalWrite(ledPin,HIGH); //led is on
-    delay(500); // sleep 0.5 sec
-  }
-  
-  digitalWrite(ledPin,LOW); // led is off
-  colorDecay(colorR);
+
+//======================================================================
+    if (digitalRead(buttonPin)) {
+      turnRed();
+    }
+    else {
+      turnWhite();
+    }
+    lcd.setRGB(colorR, colorG, colorB);
+//======================================================================
+
 }
 
-void stressAlert()
+//if button is pressed, the screen turns red.
+void turnRed()
 {
-  colorR = 0;
-  colorR--;
-  lcd.setRGB(colorR, colorG, colorB);
+  if (colorG>0) {
+    colorG--;
+  }
+  if (colorB>0) {
+    colorB--;
+  }
+    delay(40); 
 }
 
-void colorDecay(int colorX)
+//function restore the screen to white light.
+void turnWhite()
 {
-  if (colorX>0){
-  delay(500);
-  colorX--;
-  }
+    if (colorG<255) {
+      colorG++;
+    }
+    if (colorB<255) {
+      colorB++;
+    }
+    delay(30);
+}
+
+void alert()
+{
+  digitalWrite(ledPin, HIGH);
+  delay(50);
+  digitalWrite(ledPin, LOW);
 }
 
